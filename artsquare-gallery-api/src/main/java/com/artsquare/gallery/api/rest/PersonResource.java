@@ -7,10 +7,6 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 
 @RooJavaBean
 public class PersonResource extends ResourceSupport {
-
-	public PersonResource() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	private String displayName;
 	
