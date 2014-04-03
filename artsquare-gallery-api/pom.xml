@@ -13,6 +13,7 @@
 		<aspectj.version>1.7.3</aspectj.version>
 		<spring.hateoas.version>0.9.0.RELEASE</spring.hateoas.version>
 		<spring.roo.version>1.2.5.RELEASE</spring.roo.version>
+		<guava.version>15.0</guava.version>
 	</properties>
 
 
@@ -80,6 +81,20 @@
 			<groupId>org.springframework.roo</groupId>
 			<artifactId>org.springframework.roo.annotations</artifactId>
 			<version>${spring.roo.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		
+		<!-- for @JsonValue annotation; optional at runtime -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.3.2</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

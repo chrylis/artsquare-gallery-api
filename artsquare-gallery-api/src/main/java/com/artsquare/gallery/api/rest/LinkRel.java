@@ -26,5 +26,8 @@ public final class LinkRel {
 	 */
 	public static final String WORKS = "works";
 	
-	
+	/**
+	 * Resource representing the person identified as this work's primary artist.
+	 */
+	public static final String ARTIST = "artist";
 }
