@@ -1,14 +1,14 @@
 package com.artsquare.gallery.api.rest;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.springframework.hateoas.ResourceSupport;
 
 public class PersonResource extends ResourceSupport {
 
 	private String displayName;
 
+	/**
+	 * @return the Person's name formatted for display, in plain text
+	 */
 	public String getDisplayName() {
 		return displayName;
 	}
@@ -17,17 +17,26 @@ public class PersonResource extends ResourceSupport {
 		this.displayName = displayName;
 	}
 
-	private Set<String> nicknames = new HashSet<>();
+	private String bio;
 
-	public void addNickname(String nickname) {
-		nicknames.add(nickname);
+	/**
+	 * @return a short biographical snippet of this Person, in plain text
+	 */
+	public String getBio() {
+		return bio;
 	}
 
-	public boolean removeNickname(String nickname) {
-		return nicknames.remove(nickname);
+	public void setBio(String bio) {
+		this.bio = bio;
 	}
 
-	public void clearNicknames() {
-		nicknames.clear();
+	private String pictureUrl;
+
+	public String getPictureUrl() {
+		return pictureUrl;
+	}
+
+	public void setPictureUrl(String pictureUrl) {
+		this.pictureUrl = pictureUrl;
 	}
 }
