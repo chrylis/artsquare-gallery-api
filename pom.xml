@@ -21,7 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
-		<spring.hateoas.version>0.9.0.RELEASE</spring.hateoas.version>
+		<spring.hateoas.version>0.14.0.RELEASE</spring.hateoas.version>
 		<guava.version>15.0</guava.version>
 	</properties>
 
