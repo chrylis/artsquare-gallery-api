@@ -1,2 +1,5 @@
 /target
 /log.roo
+.classpath
+.project
+.settings/
