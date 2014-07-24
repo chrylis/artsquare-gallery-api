@@ -1,8 +1,7 @@
-package com.artsquare.gallery.api.rest;
+package com.artsquare.gallery.api.rest.v0;
 
-import org.springframework.hateoas.ResourceSupport;
 
-public class PersonResource extends ResourceSupport {
+public class PersonResource extends ResourceWithPicture {
 
 	private String displayName;
 
@@ -28,15 +27,5 @@ public class PersonResource extends ResourceSupport {
 
 	public void setBio(String bio) {
 		this.bio = bio;
-	}
-
-	private String pictureUrl;
-
-	public String getPictureUrl() {
-		return pictureUrl;
-	}
-
-	public void setPictureUrl(String pictureUrl) {
-		this.pictureUrl = pictureUrl;
 	}
 }

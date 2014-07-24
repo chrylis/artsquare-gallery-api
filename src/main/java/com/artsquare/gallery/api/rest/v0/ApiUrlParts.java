@@ -1,4 +1,4 @@
-package com.artsquare.gallery.api.rest;
+package com.artsquare.gallery.api.rest.v0;
 
 public final class ApiUrlParts {
 

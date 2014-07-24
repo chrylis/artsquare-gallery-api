@@ -1,6 +1,9 @@
-package com.artsquare.gallery.api.rest;
+package com.artsquare.gallery.api.rest.v0;
 
+import java.util.Collections;
 import java.util.EnumSet;
+
+import org.springframework.hateoas.Link;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.collect.ImmutableMap;
@@ -14,6 +17,7 @@ import com.google.common.collect.ImmutableSet;
  *
  */
 public enum DisplayIntent {
+
 	/**
 	 * Inline image to be displayed as decoration on a content element, such as a comment.
 	 */
@@ -78,6 +82,12 @@ public enum DisplayIntent {
 	public Integer getMaxHeight() {
 		return maxHeight;
 	}
+
+	public String applyTo(Link templatedLink) {
+		return templatedLink.expand(Collections.singletonMap(DISPLAY_INTENT_URI_PARAMETER, this.tag)).getHref();
+	}
+
+	public static final String DISPLAY_INTENT_URI_PARAMETER="intent";
 
 	public static final ImmutableMap<String, DisplayIntent> BY_TAG;
 
