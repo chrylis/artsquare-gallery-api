@@ -4,7 +4,7 @@
 
     <groupId>com.artsquare.gallery.api</groupId>
     <artifactId>artsquare-gallery-api</artifactId>
-    <version>0.2.2-SNAPSHOT</version>
+    <version>0.3.0-SNAPSHOT</version>
     <name>ArtSquare Gallery REST API</name>
 
     <distributionManagement>
@@ -21,10 +21,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
+        <groovy.version>2.3.7</groovy.version>
         <spring.hateoas.version>0.16.0.RELEASE</spring.hateoas.version>
-        <guava.version>15.0</guava.version>
-        <jackson.version>2.3.2</jackson.version>
-        <spring.version>4.0.6.RELEASE</spring.version>
+        <guava.version>18.0</guava.version>
+        <jackson.version>2.4.3</jackson.version>
+        <spring.version>4.1.1.RELEASE</spring.version>
     </properties>
 
     <build>
@@ -36,7 +37,21 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>2.9.0-01</version>
+                    </dependency>
+                    <!-- for 2.8.0-01 and later you must have an explicit dependency on groovy-eclipse-batch -->
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>2.3.4-01</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -125,6 +140,12 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>1.1.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
         </dependency>
 
         <dependency>

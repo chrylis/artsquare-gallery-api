@@ -12,3 +12,7 @@ pre-deprecated and is not publicly supported. It contains a number of simplifica
 in the representations of snippets and linked entities pending stabilization in some
 of the details surrounding CURIEs and `_embedded` entities in HAL and the corresponding
 serialization support in Spring HATEOAS.
+
+This library uses Groovy to substantially reduce the boilerplate needed, since most
+of the classes in it are DTOs. All Groovy classes are annotated `@CompileStatic`, and
+the library should be usable normally from any Java client application.
