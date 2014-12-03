@@ -21,53 +21,56 @@ public enum DisplayIntent {
 	/**
 	 * Inline image to be displayed as decoration on a content element, such as a comment.
 	 */
-	THUMBNAIL("ts", 64, 64),
+	THUMBNAIL("ts", 64, 64, true),
 
 	/**
 	 * Thumbnail to be displayed on high-density output devices.
 	 */
-	THUMBNAIL_2X("tm", 128, 128),
+	THUMBNAIL_2X("tm", 128, 128, true),
 
 	/**
 	 * Image to be used for search or gallery tiles.
 	 */
-	TILE("tl", 192, 192),
+	TILE("tl", 192, 192, true),
 
 	/**
 	 * Image to be used for search or gallery tiles on high-density devices.
 	 */
-	TILE_2X("tx", 384, 384),
+	TILE_2X("tx", 384, 384, true),
 
 	/**
 	 * Inline display suitable for a standard-density mobile device or search thumbnails.
 	 */
-	DISPLAY_SMALL("ds", 320, 480),
+	DISPLAY_SMALL("ds", 320, 480, true),
 
 	/**
 	 * Inline display suitable for a standard desktop or high-density mobile output device.
 	 */
-	DISPLAY_MEDIUM("dm", 960, 720),
+	DISPLAY_MEDIUM("dm", 960, 720, true),
 
 	/**
 	 * Inline display suitable for a large output device, such as a work page viewed on a desktop monitor.
 	 */
-	DISPLAY_LARGE("dl", 1920, 1080),
+	DISPLAY_LARGE("dl", 1920, 1080, true),
 
 	/**
 	 * Popout display suitable for a large output device, such as a full-screen view of a work. Visibly watermarked.
 	 */
-	LIGHTBOX("lb", 2560, 1440);
+	LIGHTBOX("lb", 2560, 1440, false);
 
-	private String tag;
+	private final String tag;
 
-	private Integer maxWidth;
+	private final Integer maxWidth;
 
-	private Integer maxHeight;
+	private final Integer maxHeight;
 
-	private DisplayIntent(String tag, Integer maxWidth, Integer maxHeight) {
+	private final boolean simpleScale;
+
+	private DisplayIntent(String tag, Integer maxWidth, Integer maxHeight, boolean simpleScale) {
 		this.tag = tag;
 		this.maxWidth = maxWidth;
 		this.maxHeight = maxHeight;
+		this.simpleScale = simpleScale;
 	}
 
 	@JsonValue
@@ -81,6 +84,16 @@ public enum DisplayIntent {
 
 	public Integer getMaxHeight() {
 		return maxHeight;
+	}
+
+	/**
+	 * Whether this intent is just a scaled-down version of the original or other modifications
+	 * (such as matting or watermarking) have been applied.
+	 *
+	 * @return {@code true} if this intent has had scaling but no other transforms applied
+	 */
+	public boolean isSimpleScale() {
+	    return simpleScale;
 	}
 
 	public String applyTo(Link templatedLink) {
