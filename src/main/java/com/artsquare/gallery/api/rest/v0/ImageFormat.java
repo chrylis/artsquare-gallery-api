@@ -1,6 +1,7 @@
 package com.artsquare.gallery.api.rest.v0;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.common.collect.ImmutableMap;
 
 /**
  * Values representing the format for rendered images.
@@ -22,5 +23,21 @@ public enum ImageFormat {
     @JsonValue
     public String getExtension() {
         return extension;
+    }
+
+    public static final ImmutableMap<String, ImageFormat> BY_EXTENSION;
+
+    static {
+        ImmutableMap.Builder<String, ImageFormat> builder = ImmutableMap.builder();
+        for(ImageFormat format: ImageFormat.values())
+            builder.put(format.getExtension(), format);
+        BY_EXTENSION = builder.build();
+    }
+
+    public static ImageFormat forExtension(final String extension) {
+        ImageFormat format = BY_EXTENSION.get(extension);
+        if(format == null)
+            throw new IllegalArgumentException("extension " + extension + " does not map to a known image type");
+        return format;
     }
 }
