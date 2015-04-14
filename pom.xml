@@ -4,7 +4,7 @@
 
     <groupId>com.artsquare.gallery.api</groupId>
     <artifactId>artsquare-gallery-api</artifactId>
-    <version>0.3.2-SNAPSHOT</version>
+    <version>0.3.3-SNAPSHOT</version>
     <name>ArtSquare Gallery REST API</name>
 
     <distributionManagement>
@@ -21,8 +21,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
-        <groovy.version>2.3.7</groovy.version>
-        <spring.hateoas.version>0.16.0.RELEASE</spring.hateoas.version>
+        <groovy.version>2.4.2</groovy.version>
+        <spring.hateoas.version>0.17.0.RELEASE</spring.hateoas.version>
         <guava.version>18.0</guava.version>
         <jackson.version>2.4.3</jackson.version>
         <spring.version>4.1.1.RELEASE</spring.version>
