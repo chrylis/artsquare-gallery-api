@@ -4,7 +4,7 @@
 
     <groupId>com.artsquare.gallery.api</groupId>
     <artifactId>artsquare-gallery-api</artifactId>
-    <version>0.3.3-SNAPSHOT</version>
+    <version>0.3.4-SNAPSHOT</version>
     <name>ArtSquare Gallery REST API</name>
 
     <distributionManagement>

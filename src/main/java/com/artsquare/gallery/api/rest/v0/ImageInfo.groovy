@@ -8,7 +8,7 @@ import groovy.transform.CompileStatic
  *
  */
 @CompileStatic
-class ImageInfo {
+class ImageInfo implements Serializable {
 
     /**
      * The width of this image in pixels.
