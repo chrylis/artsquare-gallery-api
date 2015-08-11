@@ -35,4 +35,14 @@ public final class LinkRel {
 	 * Resource representing the owner of a resource such as a collection.
 	 */
 	public static final String OWNER = "owner";
+
+	/**
+	 * Resource respresenting the Digitizer offering a service.
+	 */
+	public static final String DIGITIZER = "digitizer";
+
+	/**
+	 * Resource represnting a service offered by a Digitizer.
+	 */
+	public static final String SERVICE_OFFERING = "service";
 }
