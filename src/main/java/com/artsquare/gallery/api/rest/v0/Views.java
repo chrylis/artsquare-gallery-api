@@ -7,5 +7,5 @@ public final class Views {
 
     public interface Summary {}
 
-    public interface Public {}
+    public interface Public extends Summary {}
 }
