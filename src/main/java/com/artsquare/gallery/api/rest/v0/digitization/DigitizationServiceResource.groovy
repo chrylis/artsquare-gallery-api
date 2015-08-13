@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include
 @JsonInclude(Include.NON_NULL)
 @CompileStatic
 @ToString
-class BookingServiceResource extends ResourceSupport {
+class DigitizationServiceResource extends ResourceSupport {
 
     @JsonIgnore
     String getDigitizer() {
