@@ -37,16 +37,22 @@ class DigitizationServiceResource extends ResourceSupport {
      * Pricing parameters dependent on number of works. This will always include at least a
      * {@code BASE} price; if the digitizer handles reflective or oversize, then those will be included
      * as well.
+     *
+     * These are represented here as floating-point values for dollars, as JSON treats everything as a
+     * Number.
      */
     @JsonView(Views.Summary)
-    Map<Pricing.PerWork, Integer> perWorkPricing = new EnumMap(Pricing.PerWork)
+    Map<Pricing.PerWork, Double> perWorkPricing = new EnumMap(Pricing.PerWork)
 
     /**
      * Pricing parameters not dependent on number of works. If the digitizer offers delivery
      * or rush booking, these will be included here.
+     *
+     * These are represented here as floating-point values for dollars, as JSON treats everything as a
+     * Number.
      */
     @JsonView(Views.Summary)
-    Map<Pricing.PerSession, Integer> perSessionPricing = new EnumMap(Pricing.PerSession)
+    Map<Pricing.PerSession, Double> perSessionPricing = new EnumMap(Pricing.PerSession)
 
     /**
      * How far the digitizer will travel from the standard location, if travel is offered.
