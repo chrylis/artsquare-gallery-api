@@ -16,6 +16,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include
 class DigitizerResource extends ResourceSupport {
 
     @JsonView(Views.Summary)
+    String dbId
+
+    @JsonView(Views.Summary)
     String name
 
     @JsonView(Views.Summary)

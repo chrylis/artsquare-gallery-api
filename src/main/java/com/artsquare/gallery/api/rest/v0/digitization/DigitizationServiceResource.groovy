@@ -25,6 +25,12 @@ class DigitizationServiceResource extends ResourceSupport {
         getLink(LinkRel.DIGITIZER)?.href
     }
 
+    @JsonView(Views.Summary)
+    String dbId
+
+    @JsonView(Views.Summary)
+    String digitizerId
+
     String contactKey
 
     @JsonView(Views.Summary)
