@@ -20,6 +20,8 @@ class OnSiteBookingResource {
     Set<Pricing.PerSession> options
 
     Date requestedTime
+    
+    String promoCode
 
     String note
 }
