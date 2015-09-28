@@ -38,6 +38,9 @@ class DigitizationServiceResource extends ResourceSupport {
 
     @JsonView(Views.Public)
     String slug
+    
+    @JsonView(Views.Summary)
+    String metro
 
     /**
      * Pricing parameters dependent on number of works. This will always include at least a
@@ -60,6 +63,15 @@ class DigitizationServiceResource extends ResourceSupport {
     @JsonView(Views.Summary)
     Map<Pricing.PerSession, Double> perSessionPricing = new EnumMap(Pricing.PerSession)
 
+    
+    /* ---------- scheduling ---------- */
+
+    /**
+     * A time zone name, expected to be understood by Java 8's {@code ZoneId} or Joda-Time's {@code DateTimeZone}.    
+     */
+    @JsonView(Views.Public)
+    String timezone
+    
     /**
      * How far the digitizer will travel from the standard location, if travel is offered.
      */
